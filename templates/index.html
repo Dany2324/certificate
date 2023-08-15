@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxor Conference Certificate Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        #logo {
+            max-width: 64%; /* Reduced image size by 20% (again) */
+            height: auto;
+        }
+        #certificate-image {
+            max-width: 64%; /* Reduced image size by 20% (again) */
+            height: auto;
+            margin-bottom: 20px; /* Adjust margin to add space below image */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            padding: 0 15px; /* Adjust padding to set equal margins */
+        }
+        .form-group label {
+            display: block;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0; /* Adding some vertical margin to separate elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="certificate-image" src="{{ url_for('static', filename='Asset 3.png') }}" alt="Certificate Image">
+        <h1>Luxor Conference Certificate Generator</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Recipient's Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <button type="submit">Generate Certificate</button>
+        </form>
+        <img id="logo" src="{{ url_for('static', filename='color logos(creativa-dandara).png') }}" alt="Conference Logo">
+    </div>
+</body>
+</html>

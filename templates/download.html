@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Certificate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        #logo {
+            max-width: 64%; /* Reduced image size by 20% (again) */
+            height: auto;
+        }
+        #certificate-image {
+            max-width: 64%; /* Reduced image size by 20% (again) */
+            height: auto;
+            margin-bottom: 20px; /* Adjust margin to add space below image */
+        }
+        a.download-link {
+            display: inline-block;
+            margin-top: 20px; /* Add margin to separate the link from the image */
+            font-size: 18px; /* Adjust font size for consistency */
+            text-decoration: none;
+            background-color: #007bff; /* Use the same color as the button */
+            color: #ffffff; /* Text color */
+            padding: 10px 20px; /* Add padding to the link */
+            border-radius: 5px; /* Rounded corners */
+        }
+        a.download-link:hover {
+            background-color: #0056b3; /* Darker color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="certificate-image" src="{{ url_for('static', filename='Asset 3.png') }}" alt="Certificate Image">
+        <h1>Download Certificate</h1>
+        <p>Your certificate has been generated successfully!</p>
+        <a href="{{ download_link }}" download="{{ file_name }}" class="download-link">Download Certificate</a>
+        <img id="logo" src="{{ url_for('static', filename='color logos(creativa-dandara).png') }}" alt="Conference Logo">
+    </div>
+</body>
+</html>
