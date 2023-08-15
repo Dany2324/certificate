@@ -14,8 +14,8 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         name = request.form['name']
-        document_path = "C:/Users/Abdelrahman Fathi/Downloads/ITP.docx"
-        output_path = f"C:/Users/Abdelrahman Fathi/Downloads/gg/{name}_modified.docx"
+        document_path = "./ITP.docx"
+        output_path = ./cert/{name}_modified.docx"
 
         if os.path.exists(document_path):
             document = Document(document_path)
@@ -41,9 +41,9 @@ def index():
 
             timestamp = int(time.time())
             unique_filename = f"{timestamp}_{str(uuid.uuid4())[:8]}_{name}_modified.pdf"
-            unique_file_path = f"C:/Users/Abdelrahman Fathi/Downloads/gg/{unique_filename}"
+            unique_file_path = f"./cert/{unique_filename}"
 
-            os.rename(f"C:/Users/Abdelrahman Fathi/Downloads/gg/{name}_modified.pdf", unique_file_path)
+            os.rename(f"./cert/{name}_modified.pdf", unique_file_path)
 
             download_link = f"/download/{unique_filename}"
             return render_template('download.html', download_link=download_link, file_name=f"{name}_modified.pdf")
