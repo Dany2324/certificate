@@ -15,7 +15,7 @@ def index():
     if request.method == 'POST':
         name = request.form['name']
         document_path = "./ITP.docx"
-        output_path = ./cert/{name}_modified.docx"
+        output_path = "./cert/{name}_modified.docx"
 
         if os.path.exists(document_path):
             document = Document(document_path)
